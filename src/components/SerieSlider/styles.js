@@ -4,7 +4,7 @@ export const Section = styled.div`
   animation: fade 0.3s ease;
   padding: 1rem 4rem;
 
-  @media (max-width: 1500px) {
+  @media (max-width: 960px) {
     padding: 0rem 2rem;
   }
 
