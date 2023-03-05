@@ -8,9 +8,10 @@ import { useParams, Link } from "react-router-dom";
 
 // Styles
 import { Container, Header } from "./styles";
+
+// Icons
 import { HiArrowLeft } from "react-icons/hi";
 import { MdOutlineDateRange } from "react-icons/md";
-
 import { AiOutlineStar } from "react-icons/ai";
 
 // DayJS
