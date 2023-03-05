@@ -26,7 +26,7 @@ export default function SerieDetails() {
 
   useEffect(() => {
     fetch(
-      `http://api.themoviedb.org/3/tv/${id}?api_key=${APIKey}&append_to_response=videos&language=pt-BR`
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${APIKey}&language=pt-BR`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -103,7 +103,6 @@ export default function SerieDetails() {
           </span>
         </div>
       </div>
-      {/* <CastList /> */}
     </Container>
   );
 }

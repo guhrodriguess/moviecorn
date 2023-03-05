@@ -28,7 +28,7 @@ export default function MovieDetails() {
 
   useEffect(() => {
     fetch(
-      `http://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}&append_to_response=videos&language=pt-BR`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}&language=pt-BR`
     )
       .then((response) => response.json())
       .then((data) => {
