@@ -19,19 +19,12 @@ export const Container = styled.div`
   h1 {
     color: #fff;
     max-width: 100%;
+    font-size: 3rem;
     margin-bottom: 5px;
 
     @media (max-width: 960px) {
       font-size: 2rem;
       padding: 0.5rem;
-    }
-
-    @media (min-width: 961px) {
-      font-size: 2rem;
-    }
-
-    @media (min-width: 1600px) {
-      font-size: 3rem;
     }
   }
 
@@ -105,7 +98,7 @@ export const Container = styled.div`
     }
 
     @media (min-width: 1900px) {
-      margin-left: 8rem;
+      margin-left: 9rem;
       padding-top: 15rem;
       padding-bottom: 0;
     }
@@ -142,7 +135,7 @@ export const Container = styled.div`
   }
 
   .sinopse {
-    max-width: 95%;
+    max-width: 97%;
     font-size: 1rem;
     opacity: 0.7;
     border-radius: 5px;

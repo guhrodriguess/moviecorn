@@ -98,7 +98,7 @@ export const Container = styled.div`
     }
 
     @media (min-width: 1900px) {
-      margin-left: 7.5rem;
+      margin-left: 9rem;
       padding-top: 15rem;
       padding-bottom: 0;
     }
@@ -135,7 +135,7 @@ export const Container = styled.div`
   }
 
   .sinopse {
-    max-width: 95%;
+    max-width: 97%;
     font-size: 1rem;
     opacity: 0.7;
     border-radius: 5px;
