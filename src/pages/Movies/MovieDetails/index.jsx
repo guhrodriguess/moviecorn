@@ -93,7 +93,9 @@ export default function MovieDetails() {
             {movie && movie.genres
               ? movie.genres.map((genre) => (
                   <>
-                    <span id={genre.id}>{genre.name}</span>
+                    <span key={genre.id} id={genre.id}>
+                      {genre.name}
+                    </span>
                   </>
                 ))
               : ""}

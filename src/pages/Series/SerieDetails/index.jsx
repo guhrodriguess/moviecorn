@@ -90,7 +90,9 @@ export default function SerieDetails() {
             {serie && serie.genres
               ? serie.genres.map((genre) => (
                   <>
-                    <span id={genre.id}>{genre.name}</span>
+                    <span key={genre.id} id={genre.id}>
+                      {genre.name}
+                    </span>
                   </>
                 ))
               : ""}

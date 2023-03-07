@@ -6,6 +6,8 @@ const APIKey = import.meta.env.VITE_API_KEY;
 // React Responsive Carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+
+// React Router
 import { Link } from "react-router-dom";
 
 // Styles
@@ -52,6 +54,7 @@ const Home = () => {
           {popularMovies.slice(0, 3).map((movie) => (
             <Link
               style={{ textDecoration: "none", color: "white" }}
+              key={movie.id}
               to={`/movies/popular/details/${movie.id}`}
             >
               <div className="posterImage">
