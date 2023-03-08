@@ -8,5 +8,5 @@
     <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
 </div>
 
-<h3 align="center">License 🚫</h3>
+<h3 align="center">Licença 🚫</h3>
 <p align="center">© Gustavo Rodrigues Martins. Todos os direitos reservados.</p>
