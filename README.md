@@ -9,4 +9,4 @@
 </div>
 
 <h3 align="center">License 🚫</h3>
-<p align="center">© Gustavo Rodrigues Martins. All rights reserved.</p>
+<p align="center">© Gustavo Rodrigues Martins. Todos os direitos reservados.</p>
