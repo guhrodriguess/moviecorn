@@ -53,7 +53,7 @@ const Home = () => {
         >
           {popularMovies.slice(0, 3).map((movie) => (
             <Link
-              style={{ textDecoration: "none", color: "white" }}
+              style={{ textDecoration: "none", color: "white", userSelect: "none" }}
               key={movie.id}
               to={`/movies/popular/details/${movie.id}`}
             >
