@@ -87,13 +87,13 @@ export const Container = styled.div`
       align-items: center;
       text-align: center;
       margin-left: 0rem;
-      padding-top: 15rem;
+      padding-top: 13.5rem;
       padding-bottom: 1.5rem;
     }
 
     @media (min-width: 961px) {
       margin-left: 14rem;
-      padding-top: 12rem;
+      padding-top: 14.5rem;
       padding-bottom: 1rem;
     }
 
@@ -125,7 +125,7 @@ export const Container = styled.div`
 
     .divider {
       background-color: #fff;
-      width: 1px;
+      width: 2px;
       opacity: 0.6;
       height: 3vh;
       display: flex;

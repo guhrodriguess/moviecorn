@@ -87,13 +87,13 @@ export const Container = styled.div`
       align-items: center;
       text-align: center;
       margin-left: 0rem;
-      padding-top: 15rem;
+      padding-top: 13.5rem;
       padding-bottom: 1.5rem;
     }
 
     @media (min-width: 961px) {
       margin-left: 14rem;
-      padding-top: 12rem;
+      padding-top: 14.5rem;
       padding-bottom: 1rem;
     }
 
