@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 const APIKey = import.meta.env.VITE_API_KEY;
 
 // React Router
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // Styles
 import { Header, Container } from "./styles";
@@ -62,12 +62,14 @@ export default function MovieDetails() {
   return (
     <Container>
       <Header>
-        <Link to="/" style={{ textDecoration: "none", color: "#FFF" }}>
-          <button>
-            <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
-            Voltar
-          </button>
-        </Link>
+        <button
+          onClick={() => {
+            window.history.back();
+          }}
+        >
+          <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
+          Voltar
+        </button>
       </Header>
       <div className="movie-intro">
         <img

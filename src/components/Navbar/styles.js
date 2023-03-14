@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Nav = styled.aside`
+export const Nav = styled.nav`
   display: flex;
   padding: 2rem 1.5rem;
   background-color: #080a18;
@@ -92,11 +92,6 @@ export const NavMenu = styled.ul`
   padding: 1rem 0rem;
   gap: 1rem;
 
-  @media (max-width: 960px) {
-    gap: 0.2rem;
-    top: 0;
-  }
-
   .hr-style {
     padding: 1rem 0rem;
 
@@ -114,14 +109,17 @@ export const NavMenu = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: fixed;
     width: 100%;
     height: 100%;
-    position: fixed;
+    padding: 1.1rem 0rem;
     left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
     background: rgba(8, 10, 24, 0.85);
     backdrop-filter: blur(5px);
     z-index: -1;
+    gap: 0.2rem;
+    top: 0;
   }
 `;
 
@@ -154,6 +152,11 @@ export const NavItem = styled.li`
       display: flex;
       margin-left: 10px;
       width: 100%;
+    }
+
+    @media (max-height: 880px) {
+      font-size: ${({ click }) => (click ? "14px" : "auto")};
+      padding: ${({ click }) => (click ? "1rem 1rem" : "0.5rem 1rem")};
     }
   }
 
