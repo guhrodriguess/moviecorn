@@ -102,6 +102,7 @@ export const NavMenu = styled.ul`
 
     @media (max-width: 960px) {
       display: none;
+      padding: 0.5rem 0rem;
     }
   }
 
@@ -155,8 +156,8 @@ export const NavItem = styled.li`
     }
 
     @media (max-height: 880px) {
-      font-size: ${({ click }) => (click ? "14px" : "auto")};
-      padding: ${({ click }) => (click ? "1rem 1rem" : "0.5rem 1rem")};
+      font-size: 14px;
+      padding: ${({ click }) => (click ? "1rem 1rem" : "0.25rem 1rem")};
     }
   }
 
