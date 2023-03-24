@@ -36,7 +36,6 @@ export const Container = styled.div`
     height: 50vh;
     background-size: cover;
     background-position: 35% 35%;
-    filter: brightness(0.5);
 
     @media (max-width: 960px) {
       height: 40vh;
