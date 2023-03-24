@@ -85,8 +85,7 @@ export const PosterOverlay = styled.div`
 
   .primary-info {
     display: flex;
-    gap: 1rem;
-    
+    gap: 1rem;   
     
     .vote-style {
       display: flex;

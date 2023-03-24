@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   animation: fade 0.4s ease;
-  margin-bottom: 0;
   display: flex;
+  flex-direction: column;
+  margin-left: 305px;
+  position: relative;
 
   @keyframes fade {
     from {
@@ -29,52 +31,14 @@ export const Container = styled.div`
   }
 
   .movie-intro {
-    bottom: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
+    height: 50vh;
+    background-size: cover;
+    background-position: 35% 35%;
 
     @media (max-width: 960px) {
-      top: 12vh;
-      height: 80%;
-    }
-  }
-
-  .movie-backdrop {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    object-position: 35% 35%;
-    filter: brightness(0.4);
-
-    @media (max-width: 960px) {
-      height: 300px;
-    }
-  }
-
-  .movie {
-    display: flex;
-    justify-content: center;
-    top: 350px;
-    left: 10%;
-    position: absolute;
-    z-index: -1;
-
-    @media (max-width: 960px) {
-      top: 200px;
-      left: 0px;
-    }
-  }
-
-  img {
-    width: 400px;
-    user-select: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-    @media (max-width: 960px) {
-      width: 200px;
-      left: 100px;
+      height: 40vh;
     }
   }
 
@@ -82,25 +46,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 1rem 2rem;
 
     @media (max-width: 960px) {
       align-items: center;
       text-align: center;
-      margin-left: 0rem;
-      padding-top: 13.5rem;
-      padding-bottom: 1.5rem;
-    }
-
-    @media (min-width: 961px) {
-      margin-left: 14rem;
-      padding-top: 12rem;
-      padding-bottom: 1rem;
-    }
-
-    @media (min-width: 1900px) {
-      margin-left: 9rem;
-      padding-top: 15rem;
-      padding-bottom: 0;
     }
   }
 
@@ -135,11 +85,11 @@ export const Container = styled.div`
   }
 
   .sinopse {
-    max-width: 97%;
+    width: 100%;
     font-size: 1rem;
     opacity: 0.7;
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
 
     @media (max-width: 960px) {
       width: 80%;
@@ -231,35 +181,15 @@ export const Container = styled.div`
     text-transform: uppercase;
   }
 
-  @media (max-width: 700px) {
-    .movie {
-      flex-direction: column;
-    }
-
-    .movie-image {
-      display: flex;
-    }
-
-    .details {
-      max-width: 100%;
-    }
-
-    .info {
-      flex-direction: column;
-      gap: 0;
-    }
+  @media (max-width: 960px) {
+    margin-left: 0%;
   }
 `;
 
 export const Header = styled.div`
-  margin-left: 20rem;
   display: flex;
   align-items: center;
-
-  @media (max-width: 960px) {
-    top: 0;
-    margin-left: 0.5rem;
-  }
+  padding: 0 1rem;
 
   button {
     display: flex;

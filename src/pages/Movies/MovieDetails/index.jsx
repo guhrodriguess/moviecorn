@@ -61,55 +61,48 @@ export default function MovieDetails() {
 
   return (
     <Container>
-      <Header>
-        <button
-          onClick={() => {
-            window.history.back();
-          }}
-        >
-          <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
-          Voltar
-        </button>
-      </Header>
-      <div className="movie-intro">
-        <img
-          className="movie-backdrop"
-          src={`${movie ? movie.backdropImage : ""}`}
-        />
+      <div
+        className="movie-intro"
+        style={{ backgroundImage: `url(${movie?.backdropImage})` }}
+      >
+        <Header>
+          <button
+            onClick={() => {
+              window.history.back();
+            }}
+          >
+            <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
+            Voltar
+          </button>
+        </Header>
       </div>
-      <div className="movie">
-        <div className="details">
-          <div className="primary-info">
-            <span className="release-date">
-              <MdOutlineDateRange style={{ color: "#e50914" }} />
-              {dayjs(movie.releaseDate).format("MMM D, YYYY")}
-            </span>
-            <div className="divider" />
-            <span className="vote-style">
-              <AiOutlineStar style={{ color: "#e50914" }} />
-              {movie.vote}
-            </span>
-          </div>
-          <h1>{movie.title}</h1>
-          <div className="info-genres">
-            {movie && movie.genres
-              ? movie.genres.map((genre) => (
-                  <>
-                    <span key={genre.id} id={genre.id}>
-                      {genre.name}
-                    </span>
-                  </>
-                ))
-              : ""}
-          </div>
-          <span className="sinopse">
-            {movie.sinopse === "" ? (
-              <p>Sinopse indisponível.</p>
-            ) : (
-              movie.sinopse
-            )}
+      <div className="details">
+        <div className="primary-info">
+          <span className="release-date">
+            <MdOutlineDateRange style={{ color: "#e50914" }} />
+            {dayjs(movie.releaseDate).format("MMM D, YYYY")}
+          </span>
+          <div className="divider" />
+          <span className="vote-style">
+            <AiOutlineStar style={{ color: "#e50914" }} />
+            {movie.vote}
           </span>
         </div>
+        <h1>{movie.title}</h1>
+        <div className="info-genres">
+          {movie && movie.genres
+            ? movie.genres.slice(0, 3).map((genre) => (
+                <>
+                  <span key={genre.id} id={genre.id}>
+                    {genre.name}
+                  </span>
+                </>
+              ))
+            : ""}
+        </div>
+        <span className="sinopse">
+          {movie.sinopse === "" ? <p>Sinopse indisponível.</p> : movie.sinopse}
+        </span>
       </div>
     </Container>
   );

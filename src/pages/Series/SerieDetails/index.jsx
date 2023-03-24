@@ -58,55 +58,48 @@ export default function SerieDetails() {
 
   return (
     <Container>
-      <Header>
-        <button
-          onClick={() => {
-            window.history.back();
-          }}
-        >
-          <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
-          Voltar
-        </button>
-      </Header>
-      <div className="serie-intro">
-        <img
-          className="serie-backdrop"
-          src={`${serie ? serie.backdropImage : ""}`}
-        />
+      <div
+        className="serie-intro"
+        style={{ backgroundImage: `url(${serie?.backdropImage})` }}
+      >
+        <Header>
+          <button
+            onClick={() => {
+              window.history.back();
+            }}
+          >
+            <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
+            Voltar
+          </button>
+        </Header>
       </div>
-      <div className="serie">
-        <div className="details">
-          <div className="primary-info">
-            <span className="release-date">
-              <MdOutlineDateRange style={{ color: "#e50914" }} />
-              {dayjs(serie.releaseDate).format("MMM D, YYYY")}
-            </span>
-            <div className="divider" />
-            <span className="vote-style">
-              <AiOutlineStar style={{ color: "#e50914" }} />
-              {serie.vote}
-            </span>
-          </div>
-          <h1>{serie.name}</h1>
-          <div className="info-genres">
-            {serie && serie.genres
-              ? serie.genres.map((genre) => (
-                  <>
-                    <span key={genre.id} id={genre.id}>
-                      {genre.name}
-                    </span>
-                  </>
-                ))
-              : ""}
-          </div>
-          <span className="sinopse">
-            {serie.sinopse === "" ? (
-              <p>Sinopse indisponível.</p>
-            ) : (
-              serie.sinopse
-            )}
+      <div className="details">
+        <div className="primary-info">
+          <span className="release-date">
+            <MdOutlineDateRange style={{ color: "#e50914" }} />
+            {dayjs(serie.releaseDate).format("MMM D, YYYY")}
+          </span>
+          <div className="divider" />
+          <span className="vote-style">
+            <AiOutlineStar style={{ color: "#e50914" }} />
+            {serie.vote}
           </span>
         </div>
+        <h1>{serie.name}</h1>
+        <div className="info-genres">
+          {serie && serie.genres
+            ? serie.genres.slice(0, 3).map((genre) => (
+                <>
+                  <span key={genre.id} id={genre.id}>
+                    {genre.name}
+                  </span>
+                </>
+              ))
+            : ""}
+        </div>
+        <span className="sinopse">
+          {serie.sinopse === "" ? <p>Sinopse indisponível.</p> : serie.sinopse}
+        </span>
       </div>
     </Container>
   );
