@@ -38,7 +38,7 @@ export const Container = styled.div`
     background-position: 35% 35%;
 
     @media (max-width: 960px) {
-      height: 40vh;
+      height: 30vh;
     }
   }
 

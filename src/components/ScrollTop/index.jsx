@@ -10,10 +10,10 @@ export default function ScrollTop() {
         alignItems: "center",
         justifyContent: "center",
         boxShadow: "none",
-        background: "#010735",
+        background: "#e50914",
         zIndex: "1",
       }}
-      color="#e50914"
+      color="#080a18"
       width="20px"
       height="20px"
     />

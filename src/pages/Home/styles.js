@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomeStyle = styled.div`
-  margin-left: 300px;
+  margin-left: 305px;
   margin-bottom: 1.5rem;
   animation: fade 0.4s ease;
 
