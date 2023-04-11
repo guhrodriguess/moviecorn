@@ -45,12 +45,12 @@ export const Details = styled.div`
     opacity: 0.8;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     margin-left: 0rem;
     text-align: center;
   }
 
-  @media (min-width: 961px) {
+  @media (min-width: 1201px) {
     margin-left: 20rem;
   }
 
@@ -69,7 +69,7 @@ export const MovieList = styled.ul`
     padding-left: 0rem;
   }
 
-  @media (min-width: 960px) {
+  @media (min-width: 1200px) {
     padding-left: 18.5rem;
   }
 

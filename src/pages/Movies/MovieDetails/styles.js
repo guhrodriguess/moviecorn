@@ -24,7 +24,7 @@ export const Container = styled.div`
     font-size: 3rem;
     margin-bottom: 5px;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       font-size: 2rem;
       padding: 0.5rem;
     }
@@ -37,7 +37,7 @@ export const Container = styled.div`
     background-size: cover;
     background-position: 35% 35%;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       height: 30vh;
     }
   }
@@ -48,7 +48,7 @@ export const Container = styled.div`
     align-items: flex-start;
     margin: 1rem 2rem;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       align-items: center;
       text-align: center;
     }
@@ -68,7 +68,7 @@ export const Container = styled.div`
       margin-bottom: 0;
       font-weight: 500;
 
-      @media (max-width: 960px) {
+      @media (max-width: 1200px) {
         font-size: 1rem;
       }
     }
@@ -91,7 +91,7 @@ export const Container = styled.div`
     border-radius: 5px;
     padding: 0.5rem 0;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       width: 80%;
     }
   }
@@ -100,12 +100,8 @@ export const Container = styled.div`
     display: flex;
     gap: 0.5rem;
 
-    @media (max-width: 960px) {
-      gap: 0.5rem;
+    @media (max-width: 1200px) {
       font-size: 11px;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      word-break: break-word;
     }
 
     span {
@@ -163,7 +159,7 @@ export const Container = styled.div`
     font-size: 1.5rem;
     margin-bottom: 0rem;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       font-size: 1rem;
     }
   }
@@ -181,7 +177,7 @@ export const Container = styled.div`
     text-transform: uppercase;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     margin-left: 0%;
   }
 `;

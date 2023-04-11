@@ -5,7 +5,7 @@ export const HomeStyle = styled.div`
   margin-bottom: 1.5rem;
   animation: fade 0.4s ease;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     margin-left: 0;
   }
 
@@ -48,7 +48,7 @@ export const HomeStyle = styled.div`
   }
 
   .posterImage {
-    height: 600px;
+    max-height: 600px;
     filter: brightness(0.4);
 
     img {
@@ -56,7 +56,7 @@ export const HomeStyle = styled.div`
       display: block;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       height: 200px;
     }
 
@@ -79,7 +79,7 @@ export const PosterOverlay = styled.div`
   opacity: 1;
   transition: opacity 0.3s;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 
@@ -138,7 +138,7 @@ export const PosterOverlay = styled.div`
     text-align: left;
     width: 50%;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       display: none;
     }
 

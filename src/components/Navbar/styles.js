@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   z-index: 999;
   user-select: none;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     width: 100%;
     position: ${({ setClick }) => (setClick ? "fixed" : "sticky")};
     height: 12vh;
@@ -28,13 +28,9 @@ export const Nav = styled.nav`
     text-transform: uppercase;
     opacity: 0.6;
 
-    @media (max-width: 960px) {
-      :nth-child(1) {
-        margin-top: 60px;
-      }
+    @media (max-width: 1200px) {
       font-size: 16px;
       padding: 0.6rem 0rem;
-      margin-left: 25px;
     }
   }
 `;
@@ -45,7 +41,7 @@ export const NavbarContainer = styled.div`
   height: 100%;
   flex: 1;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -67,7 +63,7 @@ export const NavLogo = styled(Link)`
     color: #e50914;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     font-size: 1.5rem;
     margin-bottom: 0;
   }
@@ -76,12 +72,13 @@ export const NavLogo = styled(Link)`
 export const MobileIcon = styled.div`
   display: none;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     display: flex;
     position: sticky;
     right: 24px;
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 999;
   }
 `;
 
@@ -100,32 +97,31 @@ export const NavMenu = styled.ul`
       border: 1px solid #222;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       display: none;
-      padding: 0.5rem 0rem;
     }
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: center;
     position: fixed;
     width: 100%;
     height: 100%;
-    padding: 1.1rem 0rem;
     left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
     background: rgba(8, 10, 24, 0.85);
     backdrop-filter: blur(5px);
-    z-index: -1;
+    z-index: 1;
     gap: 0.2rem;
     top: 0;
   }
 `;
 
 export const NavItem = styled.li`
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     width: 100%;
 
     &:hover {
@@ -138,7 +134,6 @@ export const NavItem = styled.li`
     display: flex;
     align-items: center;
     font-size: 17px;
-    padding: 1rem;
     text-decoration: none;
     gap: 0.7rem;
     border-radius: 10px;
@@ -148,24 +143,39 @@ export const NavItem = styled.li`
     &:hover {
       background-color: rgba(229, 9, 20, 0.1);
     }
-
-    @media (max-width: 960px) {
+    
+    @media (max-width: 1200px) {
       display: flex;
-      margin-left: 10px;
+      flex: 1;
+      justify-content: center;
       width: 100%;
+      padding: 1rem;
+
+      &:hover {
+        background-color: transparent;
+      }
     }
 
-    @media (max-height: 880px) {
-      font-size: 14px;
-      padding: ${({ click }) => (click ? "1rem 1rem" : "0.25rem 1rem")};
+    @media (min-width: 1201px) {
+      padding: 0.1rem 1rem;
     }
+
+    @media (min-width: 1400px) {
+      padding: 0.5rem 1rem;
+    }
+
+    @media (min-width: 1600px) {
+      padding: 1rem;
+    }
+
   }
 
   .active:nth-child(1) {
     background-color: #e50914;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       background-color: transparent;
+      color: #e50914;
     }
   }
 `;

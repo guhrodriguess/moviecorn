@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // Icons
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -22,24 +22,35 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   const [click, setClick] = useState(false);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const handleCloseMenu = () => {
+    setClick(false);
+    document.body.style.overflow = "scroll";
+  };
+
+  const handleMenu = () => {
+    setClick(!click);
+    if (!click) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  };
 
   return (
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/" onClick={closeMobileMenu}>
+          <NavLogo to="/" onClick={handleCloseMenu}>
             <span>Movie</span>
             <span className="logo">Corn</span>
           </NavLogo>
-          <MobileIcon onClick={handleClick}>
+          <MobileIcon onClick={handleMenu}>
             {click ? <FaTimes /> : <FaBars />}
           </MobileIcon>
-          <NavMenu onClick={handleClick} click={click}>
+          <NavMenu onClick={handleCloseMenu} click={click}>
             <h3>Página inicial</h3>
             <NavItem>
-              <NavLink to="/" onClick={closeMobileMenu} className="nav-items">
+              <NavLink to="/" onClick={handleCloseMenu} className="nav-items">
                 <AiOutlineHome size={20} />
                 Início
               </NavLink>
@@ -51,7 +62,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/movies/releases"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <BiRocket size={20} />
@@ -61,7 +72,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/movies/popular"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <MdOutlineLocalMovies size={20} />
@@ -71,7 +82,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/movies/top"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <AiFillStar size={20} />
@@ -85,7 +96,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/series/releases"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <BiRocket size={20} />
@@ -95,7 +106,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/series/popular"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <MdOutlineLocalMovies size={20} />
@@ -105,7 +116,7 @@ function Navbar() {
             <NavItem>
               <NavLink
                 to="/series/top"
-                onClick={closeMobileMenu}
+                onClick={handleCloseMenu}
                 className="nav-items"
               >
                 <AiFillStar size={20} />

@@ -4,7 +4,7 @@ export const Section = styled.div`
   animation: fade 0.3s ease;
   padding: 1rem 4rem;
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     padding: 0rem 2rem;
   }
 
@@ -77,7 +77,7 @@ export const Details = styled.div`
     opacity: 0.8;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     margin-left: 0rem;
     text-align: center;
   }
@@ -93,16 +93,8 @@ export const MovieList = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   row-gap: 0.5rem;
 
-  @media (max-width: 366px) {
-    padding-left: 0rem;
-  }
-
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  @media (min-width: 1501px) {
-    padding-left: 0;
   }
 `;
 
@@ -123,7 +115,7 @@ export const Movie = styled.li`
       border: 2px solid #fff;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1200px) {
       width: 150px;
     }
   }
