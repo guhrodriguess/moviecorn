@@ -25,10 +25,14 @@ import PopularSeries from "./pages/Series/PopularSeries";
 import TopSeries from "./pages/Series/TopSeries";
 import SerieDetails from "./pages/Series/SerieDetails";
 
+// React Router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Loading from "./components/Loading";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
+    <Loading />
     <GlobalStyle />
     <Navbar />
     <ScrollTop />

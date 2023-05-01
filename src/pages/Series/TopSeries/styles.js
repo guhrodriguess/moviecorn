@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Section = styled.div`
   animation: fade 0.3s ease;
-  padding-left: 20rem;
-  padding-right: 0.5rem;
-  margin-bottom: 3rem;
+  padding: 0 0.5rem 0 20rem;
+  margin-bottom: 1.5rem;
   margin-top: 1.5rem;
 
   @keyframes fade {

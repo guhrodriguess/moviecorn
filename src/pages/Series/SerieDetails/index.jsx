@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// React Hooks
+import { useState, useEffect } from "react";
 
 // API
 const APIKey = import.meta.env.VITE_API_KEY;
@@ -61,28 +62,26 @@ export default function SerieDetails() {
       <div
         className="serie-intro"
         style={{ backgroundImage: `url(${serie?.backdropImage})` }}
-      >
-        <Header>
-          <button
-            onClick={() => {
-              window.history.back();
-            }}
-          >
-            <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
-            Voltar
-          </button>
-        </Header>
-      </div>
+      />
+      <Header>
+        <button
+          onClick={() => {
+            window.history.back();
+          }}
+        >
+          <HiArrowLeft className="icon-arrow" size={20} weight="bold" />
+          Voltar
+        </button>
+      </Header>
       <div className="details">
         <div className="primary-info">
-          <span className="release-date">
-            <MdOutlineDateRange style={{ color: "#e50914" }} />
-            {dayjs(serie.releaseDate).format("MMM D, YYYY")}
-          </span>
-          <div className="divider" />
           <span className="vote-style">
             <AiOutlineStar style={{ color: "#e50914" }} />
             {serie.vote}
+          </span>
+          <span className="release-date">
+            <MdOutlineDateRange style={{ color: "#e50914" }} />
+            {dayjs(serie.releaseDate).format("MMM D, YYYY")}
           </span>
         </div>
         <h1>{serie.name}</h1>

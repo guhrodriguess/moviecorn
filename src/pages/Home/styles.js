@@ -85,7 +85,7 @@ export const PosterOverlay = styled.div`
 
   .primary-info {
     display: flex;
-    gap: 1rem;   
+    gap: 1.5rem;   
     
     .vote-style {
       display: flex;
@@ -100,16 +100,6 @@ export const PosterOverlay = styled.div`
       @media (max-width: 1200px) {
         font-size: 1rem;
       }
-    }
-
-    .divider {
-      background-color: #fff;
-      width: 1px;
-      opacity: 0.6;
-      height: 3vh;
-      display: flex;
-      text-align: center;
-      align-items: center;
     }
   }
 

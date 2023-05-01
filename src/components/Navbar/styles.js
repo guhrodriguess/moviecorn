@@ -39,18 +39,17 @@ export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 1.5rem;
   flex: 1;
 
   @media (max-width: 1200px) {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
   }
 `;
 
 export const NavLogo = styled(Link)`
   color: #fff;
-  justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.8rem;
@@ -58,6 +57,7 @@ export const NavLogo = styled(Link)`
   display: flex;
   align-items: center;
   font-weight: bold;
+  z-index: 777;
 
   .logo {
     color: #e50914;
@@ -106,14 +106,13 @@ export const NavMenu = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     position: fixed;
-    width: 100%;
+    width: 70%;
     height: 100%;
+    padding: 0 30px;
     left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
-    background: rgba(8, 10, 24, 0.85);
-    backdrop-filter: blur(5px);
+    background: #080a18;
     z-index: 1;
     gap: 0.2rem;
     top: 0;
@@ -147,9 +146,8 @@ export const NavItem = styled.li`
     @media (max-width: 1200px) {
       display: flex;
       flex: 1;
-      justify-content: center;
       width: 100%;
-      padding: 1rem;
+      padding: 1rem 0.3rem;
 
       &:hover {
         background-color: transparent;
@@ -179,3 +177,13 @@ export const NavItem = styled.li`
     }
   }
 `;
+
+export const PageOpacity = styled.div`
+  display: block;
+  height: 100vh;
+  width: 100%;
+  z-index: 998;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+`

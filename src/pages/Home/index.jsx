@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// React Hooks
+import { useEffect, useState } from "react";
 
 // API
 const APIKey = import.meta.env.VITE_API_KEY;
@@ -53,7 +54,11 @@ const Home = () => {
         >
           {popularMovies.slice(0, 3).map((movie) => (
             <Link
-              style={{ textDecoration: "none", color: "white", userSelect: "none" }}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                userSelect: "none",
+              }}
               key={movie.id}
               to={`/movies/popular/details/${movie.id}`}
             >
@@ -64,14 +69,13 @@ const Home = () => {
               </div>
               <PosterOverlay>
                 <div className="primary-info">
-                  <span className="release-date">
-                    <MdOutlineDateRange style={{ color: "#e50914" }} />
-                    {dayjs(movie.release_date).format("MMM D, YYYY")}
-                  </span>
-                  <div className="divider" />
                   <span className="vote-style">
                     <AiOutlineStar style={{ color: "#e50914" }} />
                     {movie.vote_average}
+                  </span>
+                  <span className="release-date">
+                    <MdOutlineDateRange style={{ color: "#e50914" }} />
+                    {dayjs(movie.release_date).format("MMM D, YYYY")}
                   </span>
                 </div>
                 <h1>{movie.title}</h1>

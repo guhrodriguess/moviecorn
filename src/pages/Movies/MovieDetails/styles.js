@@ -36,6 +36,7 @@ export const Container = styled.div`
     height: 50vh;
     background-size: cover;
     background-position: 35% 35%;
+    filter: opacity(0.5);
 
     @media (max-width: 1200px) {
       height: 30vh;
@@ -56,7 +57,7 @@ export const Container = styled.div`
 
   .primary-info {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 
     .vote-style {
       display: flex;
@@ -71,16 +72,6 @@ export const Container = styled.div`
       @media (max-width: 1200px) {
         font-size: 1rem;
       }
-    }
-
-    .divider {
-      background-color: #fff;
-      width: 2px;
-      opacity: 0.6;
-      height: 3vh;
-      display: flex;
-      text-align: center;
-      align-items: center;
     }
   }
 
@@ -185,6 +176,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: center;
+  position: absolute;
   padding: 0 1rem;
 
   button {

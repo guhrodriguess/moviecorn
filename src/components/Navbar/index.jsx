@@ -14,6 +14,7 @@ import {
   MobileIcon,
   NavMenu,
   NavItem,
+  PageOpacity,
 } from "./styles";
 
 // React Router
@@ -24,7 +25,7 @@ function Navbar() {
 
   const handleCloseMenu = () => {
     setClick(false);
-    document.body.style.overflow = "scroll";
+    document.body.style.overflow = "auto";
   };
 
   const handleMenu = () => {
@@ -32,7 +33,7 @@ function Navbar() {
     if (!click) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflow = "auto";
     }
   };
 
@@ -40,13 +41,13 @@ function Navbar() {
     <>
       <Nav>
         <NavbarContainer>
+          <MobileIcon onClick={handleMenu}>
+            <FaBars />
+          </MobileIcon>
           <NavLogo to="/" onClick={handleCloseMenu}>
             <span>Movie</span>
             <span className="logo">Corn</span>
           </NavLogo>
-          <MobileIcon onClick={handleMenu}>
-            {click ? <FaTimes /> : <FaBars />}
-          </MobileIcon>
           <NavMenu onClick={handleCloseMenu} click={click}>
             <h3>Página inicial</h3>
             <NavItem>
@@ -126,6 +127,7 @@ function Navbar() {
           </NavMenu>
         </NavbarContainer>
       </Nav>
+      {click && <PageOpacity />}
     </>
   );
 }
