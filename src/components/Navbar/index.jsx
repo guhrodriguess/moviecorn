@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Icons
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { BiRocket } from "react-icons/bi";
 import { AiOutlineHome, AiFillStar } from "react-icons/ai";
 import { MdOutlineLocalMovies } from "react-icons/md";
