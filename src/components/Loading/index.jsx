@@ -24,7 +24,7 @@ export default function Loading() {
     const timeoutId = setTimeout(() => {
       setLoading(false);
       document.body.style.overflow = "auto";
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeoutId);
   }, []);
