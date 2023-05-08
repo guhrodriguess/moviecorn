@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   @media (max-width: 1200px) {
     width: 100%;
     position: ${({ setClick }) => (setClick ? "fixed" : "sticky")};
-    height: 12vh;
+    height: 10vh;
     border-right: none;
     border-bottom: 2px solid #222;
   }
@@ -39,12 +39,19 @@ export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 1.5rem;
   flex: 1;
 
   @media (max-width: 1200px) {
     flex-direction: row;
     align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1201px) {
+    gap: 0.5rem;
   }
 `;
 
@@ -53,7 +60,6 @@ export const NavLogo = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   font-size: 1.8rem;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -89,12 +95,12 @@ export const NavMenu = styled.ul`
   padding: 1rem 0rem;
   gap: 1rem;
 
-  .hr-style {
-    padding: 1rem 0rem;
+  hr {
+    width: 100%;
+    border: 1px solid #222;
 
-    hr {
-      width: 100%;
-      border: 1px solid #222;
+    .hr-style {
+      padding: 1rem 0rem;
     }
 
     @media (max-width: 1200px) {
@@ -142,7 +148,7 @@ export const NavItem = styled.li`
     &:hover {
       background-color: rgba(229, 9, 20, 0.1);
     }
-    
+
     @media (max-width: 1200px) {
       display: flex;
       flex: 1;
@@ -165,7 +171,6 @@ export const NavItem = styled.li`
     @media (min-width: 1600px) {
       padding: 1rem;
     }
-
   }
 
   .active:nth-child(1) {
@@ -186,4 +191,4 @@ export const PageOpacity = styled.div`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
   transition: all 0.5s ease;
-`
+`;

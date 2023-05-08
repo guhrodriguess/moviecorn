@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 // Styles
 import { LoadingContainer, LoadingLogo } from "./styles";
 
-// TypeWriter
-import TypeWriter from "typewriter-effect";
+// Icon
+import { CircleNotch } from "phosphor-react";
 
 export default function Loading() {
   const [loading, setLoading] = useState(true);
@@ -34,14 +34,10 @@ export default function Loading() {
       {loading ? (
         <LoadingContainer>
           <LoadingLogo>
-            <span>
-              <TypeWriter
-                options={{
-                  strings: ["MovieCorn"],
-                  autoStart: true,
-                }}
-              />
-            </span>
+            <h1>
+              Movie<span>Corn</span>
+            </h1>
+            <CircleNotch weight="bold" size={32} className="icon" />
           </LoadingLogo>
         </LoadingContainer>
       ) : (

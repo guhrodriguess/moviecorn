@@ -1,28 +1,41 @@
-import styled, {keyframes} from "styled-components"
+import styled, { keyframes } from "styled-components";
 
-const textAnimation = keyframes`
+const spin = keyframes`
   from {
-    color: #fff;
+    transform: rotate(0deg);
   }
   to {
-    color: #e50914;
+    transform: rotate(360deg);
   }
-`
+`;
 
 export const LoadingContainer = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   z-index: 1001;
   position: fixed;
   background-color: #080a18;
-  transition: all 0.5s ease;
-`
+`;
 
-export const LoadingLogo = styled.h1`
+export const LoadingLogo = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  animation: ${textAnimation} 6s;
-`
+  gap: 1rem;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  span {
+    color: #e50914;
+  }
+
+  .icon {
+    color: #e50914;
+    animation: ${spin} 2s linear infinite;
+  }
+`;

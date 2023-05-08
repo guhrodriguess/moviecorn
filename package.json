@@ -18,8 +18,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.8.1",
     "react-scroll-to-top": "^3.0.0",
-    "styled-components": "^5.3.6",
-    "typewriter-effect": "^2.19.0"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
