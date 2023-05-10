@@ -2,10 +2,23 @@ import styled, { keyframes } from "styled-components";
 
 const spin = keyframes`
   from {
+    opacity: 1;
     transform: rotate(0deg);
   }
   to {
+    opacity: 0;
     transform: rotate(360deg);
+  }
+`;
+
+const fade = keyframes`
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
   }
 `;
 
@@ -28,6 +41,8 @@ export const LoadingLogo = styled.div`
 
   h1 {
     font-size: 2.5rem;
+    animation: ${fade} 1s ease-in-out;
+    animation-delay: 1s;
   }
 
   span {
@@ -36,6 +51,6 @@ export const LoadingLogo = styled.div`
 
   .icon {
     color: #e50914;
-    animation: ${spin} 2s linear infinite;
+    animation: ${spin} 2.5s linear infinite;
   }
 `;
