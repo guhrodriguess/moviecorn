@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   display: flex;
-  padding: 2rem 1.5rem;
   background-color: #080a18;
   border-right: 2px solid #222;
   position: fixed;
@@ -30,7 +29,7 @@ export const Nav = styled.nav`
 
     @media (max-width: 1200px) {
       font-size: 16px;
-      padding: 0.6rem 0rem;
+      margin-top: 0.5rem;
     }
   }
 `;
@@ -38,16 +37,15 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 2rem 1.5rem;
   height: 100%;
   flex: 1;
 
   @media (max-width: 1200px) {
+    gap: 1.5rem;
+    padding: 0rem 1.5rem;
     flex-direction: row;
     align-items: center;
-  }
-
-  @media (max-width: 1200px) {
-    gap: 1.5rem;
   }
 
   @media (min-width: 1201px) {
@@ -102,26 +100,21 @@ export const NavMenu = styled.ul`
     .hr-style {
       padding: 1rem 0rem;
     }
-
-    @media (max-width: 1200px) {
-      display: none;
-    }
   }
 
   @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: fixed;
     width: 70%;
     height: 100%;
-    padding: 0 30px;
+    padding: 10px 25px;
     left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
     background: #080a18;
     z-index: 1;
-    gap: 0.2rem;
-    top: 0;
+    gap: 0.5rem;
+    top: 10vh;
   }
 `;
 
@@ -153,7 +146,7 @@ export const NavItem = styled.li`
       display: flex;
       flex: 1;
       width: 100%;
-      padding: 1rem 0.3rem;
+      padding: 0.8rem 0.4rem;
 
       &:hover {
         background-color: transparent;
@@ -161,14 +154,10 @@ export const NavItem = styled.li`
     }
 
     @media (min-width: 1201px) {
-      padding: 0.1rem 1rem;
+      padding: 0.4rem 1rem;
     }
 
     @media (min-width: 1400px) {
-      padding: 0.5rem 1rem;
-    }
-
-    @media (min-width: 1600px) {
       padding: 1rem;
     }
   }

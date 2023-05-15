@@ -5,7 +5,11 @@ import { useState, useEffect } from "react";
 const APIKey = import.meta.env.VITE_API_KEY;
 
 // Styles
-import { Section, MovieList, Details, Movie } from "./styles";
+import { Section, Details, Movie } from "./styles";
+
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 // React Router
 import { Link } from "react-router-dom";
@@ -28,25 +32,47 @@ export default function MovieSlider() {
         <h1>Filmes</h1>
         <h3>Rankeados</h3>
       </Details>
-      <MovieList>
-        {movies.slice(0, 6).map((movie) => {
+      <Swiper
+        navigation
+        grabCursor={true}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        slidesPerView={6}
+        scrollbar={{ draggable: true }}
+        breakpoints={{
+          100: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          600: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+          1440: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+          },
+        }}
+        style={{ width: "100%", height: "max-content" }}
+      >
+        {movies.map((movie) => {
           return (
-            <Movie key={movie.id}>
-              <Link to={`/movies/top/details/${movie.id}`}>
-                <img
-                  src={`${image_path}${movie.poster_path}`}
-                  alt={movie.title}
-                />
-              </Link>
-            </Movie>
+            <SwiperSlide>
+              <Movie key={movie.id}>
+                <Link to={`/movies/top/details/${movie.id}`}>
+                  <img
+                    src={`${image_path}${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </Link>
+              </Movie>
+            </SwiperSlide>
           );
         })}
-      </MovieList>
-      <div className="button-style">
-        <Link to="/movies/top">
-          <button>VER MAIS</button>
-        </Link>
-      </div>
+      </Swiper>
     </Section>
   );
 }

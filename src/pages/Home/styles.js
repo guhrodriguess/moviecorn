@@ -41,6 +41,7 @@ export const HomeStyle = styled.div`
     max-width: 100%;
     font-size: 2.5rem;
     margin-bottom: 5px;
+    text-align: start;
 
     @media (max-width: 1254px) {
       font-size: 1.5rem;

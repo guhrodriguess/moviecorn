@@ -5,7 +5,11 @@ import { useState, useEffect } from "react";
 const APIKey = import.meta.env.VITE_API_KEY;
 
 // Styles
-import { Section, SerieList, Details, Serie } from "./styles";
+import { Section, Details, Serie } from "./styles";
+
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 // React Router
 import { Link } from "react-router-dom";
@@ -25,28 +29,49 @@ export default function SerieSlider() {
   return (
     <Section>
       <Details>
-        <h1>Séries</h1>
+        <h1>Filmes</h1>
         <h3>Rankeados</h3>
       </Details>
-      <SerieList>
-        {series.slice(0, 6).map((serie) => {
+      <Swiper
+        navigation
+        grabCursor={true}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        slidesPerView={6}
+        breakpoints={{
+          100: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          600: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 10,
+          },
+          1440: {
+            slidesPerView: 5,
+            spaceBetween: 10,
+          },
+        }}
+        style={{ width: "100%", height: "max-content" }}
+      >
+        {series.map((serie) => {
           return (
-            <Serie key={serie.id}>
-              <Link to={`/series/top/details/${serie.id}`}>
-                <img
-                  src={`${image_path}${serie.poster_path}`}
-                  alt={serie.title}
-                />
-              </Link>
-            </Serie>
+            <SwiperSlide>
+              <Serie key={serie.id}>
+                <Link to={`/series/top/details/${serie.id}`}>
+                  <img
+                    src={`${image_path}${serie.poster_path}`}
+                    alt={serie.title}
+                  />
+                </Link>
+              </Serie>
+            </SwiperSlide>
           );
         })}
-      </SerieList>
-      <div className="button-style">
-        <Link to="/series/top">
-          <button>VER MAIS</button>
-        </Link>
-      </div>
+      </Swiper>
     </Section>
   );
 }

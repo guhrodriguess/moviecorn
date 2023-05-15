@@ -12,7 +12,7 @@ export default function ScrollTop() {
         justifyContent: "center",
         boxShadow: "none",
         background: "#e50914",
-        zIndex: "1",
+        zIndex: "50",
       }}
       color="#080a18"
       width="20px"
