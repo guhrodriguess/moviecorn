@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: #060813;
     color: #fff;
+    outline: none;
   }
   
   ::-webkit-scrollbar{
@@ -22,6 +23,11 @@ const GlobalStyle = createGlobalStyle`
     background: #E50914;
     border-radius: 10px;
     border: 3.5px solid #111;
+  }
+
+  ::selection {
+    background: #E50914;
+    color: #fff;
   }
 `;
 
