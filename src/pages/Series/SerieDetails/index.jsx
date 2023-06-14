@@ -20,6 +20,7 @@ import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
 dayjs.locale("pt-br");
 
+// Serie Details
 export default function SerieDetails() {
   const { id } = useParams();
 

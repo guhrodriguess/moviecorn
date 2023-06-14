@@ -14,6 +14,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 // React Router
 import { Link } from "react-router-dom";
 
+// Movie Slider
 export default function MovieSlider() {
   const [movies, setMovies] = useState([]);
   const image_path = "https://image.tmdb.org/t/p/w500";

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// React Hooks
+import { useState } from "react";
 
 // Icons
 import { FaBars } from "react-icons/fa";
@@ -20,7 +21,8 @@ import {
 // React Router
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
+// Navbar
+export default function Navbar() {
   const [click, setClick] = useState(false);
 
   const handleCloseMenu = () => {
@@ -131,5 +133,3 @@ function Navbar() {
     </>
   );
 }
-
-export default Navbar;

@@ -10,6 +10,7 @@ import { Section, SerieList, Details, Serie } from "./styles";
 // React Router
 import { Link } from "react-router-dom";
 
+// Release Series
 export default function ReleaseSeries() {
   const [series, setSeries] = useState([]);
   const image_path = "https://image.tmdb.org/t/p/w500";

@@ -1,9 +1,6 @@
 // React Hooks
 import { useEffect, useState } from "react";
 
-// API
-const APIKey = import.meta.env.VITE_API_KEY;
-
 // React Responsive Carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -27,7 +24,10 @@ import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
 dayjs.locale("pt-br");
 
-const Home = () => {
+// API
+const APIKey = import.meta.env.VITE_API_KEY;
+
+export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
 
   const backdropImage_path = "https://image.tmdb.org/t/p/original/";
@@ -89,6 +89,4 @@ const Home = () => {
       <SerieSlider />
     </HomeStyle>
   );
-};
-
-export default Home;
+}

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { LoadingContainer, LoadingLogo } from "./styles";
 
 // Icon
-import { CircleNotch } from "phosphor-react";
+import { FaCircleNotch } from "react-icons/fa";
 
 export default function Loading() {
   const [loading, setLoading] = useState(true);
@@ -31,17 +31,15 @@ export default function Loading() {
 
   return (
     <>
-      {loading ? (
+      {loading && (
         <LoadingContainer>
           <LoadingLogo>
             <h1>
               Movie<span>Corn</span>
             </h1>
-            <CircleNotch weight="bold" size={32} className="icon" />
+            <FaCircleNotch size={32} className="icon" />
           </LoadingLogo>
         </LoadingContainer>
-      ) : (
-        ""
       )}
     </>
   );

@@ -1,13 +1,13 @@
+// React
 import React from "react";
 import ReactDOM from "react-dom/client";
 
 // Global Style
 import GlobalStyle from "./global";
 
-// Navbar
+// Components
+import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
-
-// ScrollToTop
 import ScrollTop from "./components/ScrollTop";
 
 // Home page
@@ -26,9 +26,13 @@ import TopSeries from "./pages/Series/TopSeries";
 import SerieDetails from "./pages/Series/SerieDetails";
 
 // React Router
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Loading from "./components/Loading";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
@@ -59,6 +63,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/series/releases/details/:id" element={<SerieDetails />} />
       <Route path="/series/popular/details/:id" element={<SerieDetails />} />
       <Route path="/series/top/details/:id" element={<SerieDetails />} />
+
+      {/* Route 404 */}
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="/404" />} />
     </Routes>
   </Router>
 );

@@ -10,6 +10,7 @@ import { Section, MovieList, Details, Movie } from "./styles";
 // React Router
 import { Link } from "react-router-dom";
 
+// Popular Movies
 export default function PopularMovies() {
   const [movies, setMovies] = useState([]);
   const image_path = "https://image.tmdb.org/t/p/w500";

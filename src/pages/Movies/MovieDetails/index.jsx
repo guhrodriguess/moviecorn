@@ -20,6 +20,7 @@ import dayjs from "dayjs";
 import "dayjs/locale/pt-br";
 dayjs.locale("pt-br");
 
+// Movie Details
 export default function MovieDetails() {
   const { id } = useParams();
 
