@@ -30,7 +30,7 @@ export default function SerieSlider() {
   return (
     <Section>
       <Details>
-        <h1>Filmes</h1>
+        <h1>Séries</h1>
         <h3>Rankeados</h3>
       </Details>
       <Swiper
