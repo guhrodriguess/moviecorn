@@ -5,7 +5,7 @@
 </div>
 
 <div align="center"><strong>MovieCorn</strong></div>
-<div align="center">Movie and series library <br /> using the TMDb API. <br /> <br /> Access <a href="https://moviecorn.vercel.app/">here</a>.</div>
+<div align="center">Movie and series library <br /> using the TMDb API. <br /> Access <a href="https://moviecorn.vercel.app/">here</a>.</div>
 
 <br />
 
