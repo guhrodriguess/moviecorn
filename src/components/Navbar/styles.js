@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   display: flex;
-  background-color: #080a18;
-  border-right: 2px solid #222;
+  background-color: ${(props) => props.theme.background};
+  border-right: 2px solid ${(props) => props.theme.hr};
   position: fixed;
   top: 0;
   width: 305px;
@@ -18,7 +18,7 @@ export const Nav = styled.nav`
     position: ${({ setClick }) => (setClick ? "fixed" : "sticky")};
     height: 10vh;
     border-right: none;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid ${(props) => props.theme.hr};
   }
 
   h3 {
@@ -54,7 +54,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(Link)`
-  color: #fff;
+  color: ${(props) => props.theme.text};
   cursor: pointer;
   text-decoration: none;
   font-size: 1.8rem;
@@ -64,7 +64,7 @@ export const NavLogo = styled(Link)`
   z-index: 777;
 
   .logo {
-    color: #e50914;
+    color: ${(props) => props.theme.primary};
   }
 
   @media (max-width: 1200px) {
@@ -73,8 +73,18 @@ export const NavLogo = styled(Link)`
   }
 `;
 
-export const MobileIcon = styled.div`
+export const MobileIcon = styled.button`
   display: none;
+  background: transparent;
+  border: none;
+  color: ${(props) => props.theme.text};
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:active {
+    transform: scale(0.8);
+  }
 
   @media (max-width: 1200px) {
     display: flex;
@@ -95,7 +105,7 @@ export const NavMenu = styled.ul`
 
   hr {
     width: 100%;
-    border: 1px solid #222;
+    border: 1px solid ${(props) => props.theme.hr};
 
     .hr-style {
       padding: 1rem 0rem;
@@ -107,14 +117,15 @@ export const NavMenu = styled.ul`
     flex-direction: column;
     position: fixed;
     width: 70%;
-    height: 100%;
+    height: 100vh;
     padding: 10px 25px;
     left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
-    background: #080a18;
+    background: ${(props) => props.theme.background};
     z-index: 1;
     gap: 0.5rem;
     top: 10vh;
+    overflow: auto;
   }
 `;
 
@@ -128,7 +139,7 @@ export const NavItem = styled.li`
   }
 
   .nav-items {
-    color: #fff;
+    color: ${(props) => props.theme.text};
     display: flex;
     align-items: center;
     font-size: 17px;
@@ -139,7 +150,7 @@ export const NavItem = styled.li`
     height: 100%;
 
     &:hover {
-      background-color: rgba(229, 9, 20, 0.1);
+      background-color: ${(props) => props.theme.primaryHover};
     }
 
     @media (max-width: 1200px) {
@@ -163,11 +174,11 @@ export const NavItem = styled.li`
   }
 
   .active:nth-child(1) {
-    background-color: #e50914;
+    background-color: ${(props) => props.theme.primary};
 
     @media (max-width: 1200px) {
       background-color: transparent;
-      color: #e50914;
+      color: ${(props) => props.theme.primary};
     }
   }
 `;
@@ -178,6 +189,6 @@ export const PageOpacity = styled.div`
   width: 100%;
   z-index: 998;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: ${(props) => props.theme.blackOpacity};
   transition: all 0.5s ease;
 `;

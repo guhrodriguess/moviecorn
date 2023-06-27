@@ -32,18 +32,18 @@ export const Info = styled.div`
   }
 
   button {
-    border: 3px solid #e50914;
+    border: 3px solid ${(props) => props.theme.primary};
     background: transparent;
     padding: 0.5rem 1rem;
-    color: #e50914;
+    color: ${(props) => props.theme.primary};
     border-radius: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.4s ease;
 
     &:hover {
-      background: #e50914;
-      color: #fff;
+      background: ${(props) => props.theme.primary};
+      color: ${(props) => props.theme.text};
     }
   }
 `;

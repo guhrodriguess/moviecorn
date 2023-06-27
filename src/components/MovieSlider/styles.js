@@ -6,9 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { fadeIn } from "../../styles/global";
 
 export const Section = styled.div`
-  animation: fade 0.3s ease;
+  animation: ${fadeIn} 0.3s ease;
   padding: 1rem 4rem;
   list-style: none;
 
@@ -17,22 +18,11 @@ export const Section = styled.div`
   }
 
   .swiper-button-prev {
-    color: #e50914;
+    color: ${(props) => props.theme.primary};
   }
 
   .swiper-button-next {
-    color: #e50914;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    color: ${(props) => props.theme.primary};
   }
 `;
 
@@ -40,7 +30,7 @@ export const Details = styled.div`
   margin: 1.5rem 0;
 
   h1 {
-    color: #e50914;
+    color: ${(props) => props.theme.primary};
     font-weight: 600;
     text-transform: uppercase;
 
@@ -55,7 +45,7 @@ export const Details = styled.div`
   }
 
   .title {
-    color: #fff;
+    color: ${(props) => props.theme.text};
   }
 
   p {
@@ -87,7 +77,7 @@ export const Movie = styled.li`
 
     &:hover {
       opacity: 0.5;
-      border: 2px solid #fff;
+      border: 2px solid ${(props) => props.theme.text};
     }
 
     @media (max-width: 1200px) {

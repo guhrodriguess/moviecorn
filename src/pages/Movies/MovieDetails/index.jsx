@@ -8,7 +8,14 @@ const APIKey = import.meta.env.VITE_API_KEY;
 import { useParams } from "react-router-dom";
 
 // Styles
-import { Header, Container } from "./styles";
+import {
+  Header,
+  Container,
+  Details,
+  PrimaryInfo,
+  InfoGenres,
+  Sinopse,
+} from "../../../styles/details";
 
 // Icons
 import { HiArrowLeft } from "react-icons/hi";
@@ -77,8 +84,8 @@ export default function MovieDetails() {
           Voltar
         </button>
       </Header>
-      <div className="details">
-        <div className="primary-info">
+      <Details>
+        <PrimaryInfo>
           <span className="vote-style">
             <AiOutlineStar style={{ color: "#e50914" }} />
             {movie.vote}
@@ -87,9 +94,9 @@ export default function MovieDetails() {
             <MdOutlineDateRange style={{ color: "#e50914" }} />
             {dayjs(movie.releaseDate).format("MMM D, YYYY")}
           </span>
-        </div>
+        </PrimaryInfo>
         <h1>{movie.title}</h1>
-        <div className="info-genres">
+        <InfoGenres>
           {movie && movie.genres
             ? movie.genres.slice(0, 3).map((genre) => (
                 <>
@@ -99,11 +106,11 @@ export default function MovieDetails() {
                 </>
               ))
             : ""}
-        </div>
-        <span className="sinopse">
+        </InfoGenres>
+        <Sinopse>
           {movie.sinopse === "" ? <p>Sinopse indisponível.</p> : movie.sinopse}
-        </span>
-      </div>
+        </Sinopse>
+      </Details>
     </Container>
   );
 }

@@ -1,27 +1,17 @@
 import styled from "styled-components";
+import { fadeIn } from "./../../styles/global";
 
 export const HomeStyle = styled.div`
   margin-left: 305px;
   margin-bottom: 1.5rem;
-  animation: fade 0.4s ease;
+  animation: ${fadeIn} 0.4s ease;
 
   @media (max-width: 1200px) {
     margin-left: 0;
   }
 
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid #e50914;
+    border-right: 8px solid ${(props) => props.theme.primary};
   }
 
   .carousel .control-next.control-arrow {
@@ -29,15 +19,15 @@ export const HomeStyle = styled.div`
   }
 
   .carousel .control-next.control-arrow:before {
-    border-left: 8px solid #e50914;
+    border-left: 8px solid ${(props) => props.theme.primary};
   }
 
   .carousel .control-dots .dot {
-    background: #e50914;
+    background: ${(props) => props.theme.primary};
   }
 
   h1 {
-    color: #fff;
+    color: ${(props) => props.theme.text};
     max-width: 100%;
     font-size: 2.5rem;
     margin-bottom: 5px;
@@ -86,18 +76,18 @@ export const PosterOverlay = styled.div`
 
   .primary-info {
     display: flex;
-    gap: 1.5rem;   
-    
+    gap: 1.5rem;
+
     .vote-style {
       display: flex;
       font-size: 1.5rem;
       gap: 0.3rem;
-      color: #a9a9b2;
+      color: ${(props) => props.theme.detail};
       text-align: center;
       align-items: center;
       margin-bottom: 0;
       font-weight: 500;
-      
+
       @media (max-width: 1200px) {
         font-size: 1rem;
       }
@@ -106,7 +96,7 @@ export const PosterOverlay = styled.div`
 
   .release-date {
     display: flex;
-    color: #a9a9b2;
+    color: ${(props) => props.theme.detail};
     font-size: 1.5rem;
     gap: 0.3rem;
     text-align: center;
