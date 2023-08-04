@@ -1,7 +1,7 @@
 <div align="center">
 
-   ![MovieCorn image](./public/assets/readme-image.png)
-   
+![MovieCorn image](./public/readme-image.png)
+
 </div>
 
 <div align="center"><strong>MovieCorn</strong></div>
@@ -11,6 +11,6 @@
 
 <div align="center">
 
-[![My Skills](https://skillicons.dev/icons?i=react,styledcomponents)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,typescript,styledcomponents)](https://skillicons.dev)
 
 </div>
