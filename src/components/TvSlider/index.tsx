@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import * as Styles from "./styles";
 
+import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -61,7 +63,9 @@ export default function TvSlider() {
                 {topTv.map((tv: MapProps) => {
                     return (
                         <SwiperSlide key={tv.id}>
-                            <TvCard data={tv} />
+                            <Link to={`/tv/top/details/${tv.id}`}>
+                                <TvCard data={tv} />
+                            </Link>
                         </SwiperSlide>
                     );
                 })}

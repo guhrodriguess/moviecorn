@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import * as Styles from "./styles";
 
+import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -62,7 +64,9 @@ export default function MovieSlider() {
                 {topMovies.map((movie: MapProps) => {
                     return (
                         <SwiperSlide key={movie.id}>
-                            <MovieCard data={movie} />
+                            <Link to={`/movies/top/details/${movie.id}`}>
+                                <MovieCard data={movie} />
+                            </Link>
                         </SwiperSlide>
                     );
                 })}
