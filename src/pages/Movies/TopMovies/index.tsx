@@ -6,9 +6,8 @@ import * as Styles from "./styles";
 
 import { fetchTopMovies } from "@/api/movies";
 
-import MovieCard from "@/components/MovieCard";
-
 import { CardList } from "@/styles/global";
+import Card from "@/components/Card";
 
 import { MapProps } from "@/types";
 
@@ -30,13 +29,11 @@ export default function TopMovies() {
                 <h3>Rankeados</h3>
             </Styles.Details>
             <CardList>
-                {topMovies.map((movie: MapProps) => {
-                    return (
-                        <Link to={`/movies/top/details/${movie.id}`}>
-                            <MovieCard data={movie} />
-                        </Link>
-                    );
-                })}
+                {topMovies.map((movie: MapProps) => (
+                    <Link key={movie.id} to={`/movies/top/details/${movie.id}`}>
+                        <Card data={movie} />
+                    </Link>
+                ))}
             </CardList>
         </Styles.Section>
     );

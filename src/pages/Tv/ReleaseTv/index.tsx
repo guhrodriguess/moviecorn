@@ -6,7 +6,7 @@ import * as Styles from "./styles";
 
 import { fetchReleaseTv } from "@/api/tv";
 
-import TvCard from "@/components/TvCard";
+import TvCard from "@/components/Card";
 
 import { CardList } from "@/styles/global";
 
@@ -30,13 +30,11 @@ export default function ReleaseTv() {
                 <h3>Lançamentos</h3>
             </Styles.Details>
             <CardList>
-                {releaseTv.map((tv: MapProps) => {
-                    return (
-                        <Link to={`/tv/releases/details/${tv.id}`}>
-                            <TvCard data={tv} />
-                        </Link>
-                    );
-                })}
+                {releaseTv.map((tv: MapProps) => (
+                    <Link key={tv.id} to={`/tv/releases/details/${tv.id}`}>
+                        <TvCard data={tv} />
+                    </Link>
+                ))}
             </CardList>
         </Styles.Section>
     );

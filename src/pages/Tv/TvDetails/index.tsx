@@ -16,6 +16,9 @@ import { backdropImage_path } from "@/utils";
 
 import { DetailsProps } from "@/types";
 
+import TvCredits from "@/components/TvCredits";
+import TvBackdrops from "@/components/TvBackdrops";
+
 export default function TvDetails() {
     const [tvDetails, setTvDetails] = useState({} as DetailsProps);
 
@@ -96,6 +99,10 @@ export default function TvDetails() {
                         tvDetails.sinopse
                     )}
                 </Styles.Sinopse>
+
+                <TvCredits id={id} />
+
+                <TvBackdrops id={id} />
             </Styles.Details>
         </Styles.Container>
     );

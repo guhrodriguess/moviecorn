@@ -57,25 +57,3 @@ export const Details = styled.div`
         text-align: center;
     }
 `;
-
-export const MovieCard = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-        width: 100%;
-        border: 2px solid transparent;
-        transition: all 0.3s;
-        border-radius: 15px;
-
-        &:hover {
-            opacity: 0.5;
-            border: 2px solid ${(props) => props.theme.text};
-        }
-
-        @media (max-width: 1200px) {
-            width: 150px;
-        }
-    }
-`;

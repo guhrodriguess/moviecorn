@@ -18,3 +18,9 @@ export interface HeaderProps {
     showMenu: boolean;
     setShowMenu?: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface CreditsProps {
+    id: number;
+    profile_path: string;
+    original_name: string;
+}

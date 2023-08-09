@@ -40,7 +40,7 @@ export const HomeStyle = styled.main`
 
     .posterImage {
         max-height: 600px;
-        filter: brightness(0.4);
+        filter: opacity(0.5);
 
         img {
             margin: auto;

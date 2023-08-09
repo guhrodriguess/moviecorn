@@ -6,9 +6,8 @@ import * as Styles from "./styles";
 
 import { fetchReleaseMovies } from "@/api/movies";
 
-import MovieCard from "@/components/MovieCard";
-
 import { CardList } from "@/styles/global";
+import Card from "@/components/Card";
 
 import { MapProps } from "@/types";
 
@@ -30,13 +29,14 @@ export default function ReleaseMovies() {
                 <h3>Lançamentos</h3>
             </Styles.Details>
             <CardList>
-                {releaseMovies.map((movie: MapProps) => {
-                    return (
-                        <Link to={`/movies/releases/details/${movie.id}`}>
-                            <MovieCard data={movie} />
-                        </Link>
-                    );
-                })}
+                {releaseMovies.map((movie: MapProps) => (
+                    <Link
+                        key={movie.id}
+                        to={`/movies/releases/details/${movie.id}`}
+                    >
+                        <Card data={movie} />
+                    </Link>
+                ))}
             </CardList>
         </Styles.Section>
     );

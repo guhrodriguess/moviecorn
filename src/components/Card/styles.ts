@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TvCard = styled.li`
+export const Card = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;

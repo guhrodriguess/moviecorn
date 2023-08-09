@@ -16,6 +16,9 @@ import { backdropImage_path } from "@/utils";
 
 import { DetailsProps } from "@/types";
 
+import MovieCredits from "@/components/MovieCredits";
+import MovieBackdrops from "@/components/MovieBackdrops";
+
 export default function MovieDetails() {
     const [movieDetails, setMovieDetails] = useState({} as DetailsProps);
 
@@ -69,11 +72,11 @@ export default function MovieDetails() {
             <Styles.Details>
                 <Styles.PrimaryInfo>
                     <span className="vote-style">
-                        <Star style={{ color: "#e50914" }} />
+                        <Star color="#e50914" />
                         {movieDetails.vote}
                     </span>
                     <span className="release-date">
-                        <Calendar style={{ color: "#e50914" }} />
+                        <Calendar color="#e50914" />
                         {dayjs(movieDetails.releaseDate).format("MMM D, YYYY")}
                     </span>
                 </Styles.PrimaryInfo>
@@ -90,12 +93,16 @@ export default function MovieDetails() {
                         : ""}
                 </Styles.InfoGenres>
                 <Styles.Sinopse>
-                    {movieDetails.sinopse === "" ? (
+                    {!movieDetails.sinopse ? (
                         <p>Sinopse indisponível.</p>
                     ) : (
                         movieDetails.sinopse
                     )}
                 </Styles.Sinopse>
+
+                <MovieCredits id={id} />
+
+                <MovieBackdrops id={id} />
             </Styles.Details>
         </Styles.Container>
     );

@@ -6,7 +6,7 @@ import * as Styles from "./styles";
 
 import { fetchTopTv } from "@/api/tv";
 
-import TvCard from "@/components/TvCard";
+import TvCard from "@/components/Card";
 
 import { CardList } from "@/styles/global";
 
@@ -30,13 +30,11 @@ export default function TopTv() {
                 <h3>Rankeados</h3>
             </Styles.Details>
             <CardList>
-                {topTv.map((tv: MapProps) => {
-                    return (
-                        <Link to={`/tv/top/details/${tv.id}`}>
-                            <TvCard data={tv} />
-                        </Link>
-                    );
-                })}
+                {topTv.map((tv: MapProps) => (
+                    <Link key={tv.id} to={`/tv/top/details/${tv.id}`}>
+                        <TvCard data={tv} />
+                    </Link>
+                ))}
             </CardList>
         </Styles.Section>
     );

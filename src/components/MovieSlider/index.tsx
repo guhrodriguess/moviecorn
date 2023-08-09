@@ -9,7 +9,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 import { fetchTopMovies } from "@/api/movies";
 
-import MovieCard from "../MovieCard";
+import Card from "../Card";
 
 import { MapProps } from "@/types";
 
@@ -32,7 +32,6 @@ export default function MovieSlider() {
                 navigation
                 grabCursor={true}
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                scrollbar={{ draggable: true }}
                 breakpoints={{
                     100: {
                         slidesPerView: 1,
@@ -61,15 +60,13 @@ export default function MovieSlider() {
                 }}
                 style={{ width: "100%", height: "max-content" }}
             >
-                {topMovies.map((movie: MapProps) => {
-                    return (
-                        <SwiperSlide key={movie.id}>
-                            <Link to={`/movies/top/details/${movie.id}`}>
-                                <MovieCard data={movie} />
-                            </Link>
-                        </SwiperSlide>
-                    );
-                })}
+                {topMovies.map((movie: MapProps) => (
+                    <SwiperSlide key={movie.id}>
+                        <Link to={`/movies/top/details/${movie.id}`}>
+                            <Card data={movie} />
+                        </Link>
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </Styles.Section>
     );

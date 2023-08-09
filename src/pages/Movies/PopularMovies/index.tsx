@@ -6,9 +6,8 @@ import * as Styles from "./styles";
 
 import { fetchPopularMovies } from "@/api/movies";
 
-import MovieCard from "@/components/MovieCard";
-
 import { CardList } from "@/styles/global";
+import Card from "@/components/Card";
 
 import { MapProps } from "@/types";
 
@@ -30,13 +29,14 @@ export default function PopularMovies() {
                 <h3>Populares</h3>
             </Styles.Details>
             <CardList>
-                {popularMovies.map((movie: MapProps) => {
-                    return (
-                        <Link to={`/movies/popular/details/${movie.id}`}>
-                            <MovieCard data={movie} />
-                        </Link>
-                    );
-                })}
+                {popularMovies.map((movie: MapProps) => (
+                    <Link
+                        key={movie.id}
+                        to={`/movies/popular/details/${movie.id}`}
+                    >
+                        <Card data={movie} />
+                    </Link>
+                ))}
             </CardList>
         </Styles.Section>
     );

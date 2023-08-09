@@ -39,3 +39,23 @@ export const fetchTvDetails = async ({ id }) => {
 
     return data;
 };
+
+export const fetchTvCredits = async ({ id }) => {
+    const response = await fetch(
+        `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${APIKey}&language=en-US`
+    );
+
+    const data = await response.json();
+
+    return data.cast;
+};
+
+export const fetchTvBackdrops = async ({ id }) => {
+    const response = await fetch(
+        `https://api.themoviedb.org/3/tv/${id}/images?api_key=${APIKey}`
+    );
+
+    const data = await response.json();
+
+    return data.backdrops;
+};

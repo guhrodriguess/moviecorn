@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-import { LayoutGrid, Rocket, Star, Clapperboard, Menu } from "lucide-react";
+import {
+    LayoutGrid,
+    Rocket,
+    Star,
+    Clapperboard,
+    AlignLeft,
+} from "lucide-react";
 
 import * as Styles from "./styles";
 
@@ -31,13 +37,10 @@ export default function Header() {
             <Styles.Header>
                 <Styles.Nav>
                     <Styles.MobileIcon onClick={handleMenu}>
-                        <Menu />
+                        <AlignLeft size={30} />
                     </Styles.MobileIcon>
-                    <img src={logo} width={170} alt="MovieCorn Logo" />
-                    <Styles.NavMenu
-                        onClick={(e) => e.stopPropagation()}
-                        showMenu={showMenu}
-                    >
+                    <img src={logo} width={150} alt="MovieCorn Logo" />
+                    <Styles.NavMenu showMenu={showMenu}>
                         <h3>Página inicial</h3>
                         <NavLink
                             to="/"

@@ -12,7 +12,6 @@ export const Container = styled.main`
         color: ${(props) => props.theme.text};
         max-width: 100%;
         font-size: 3rem;
-        margin-bottom: 5px;
 
         @media (max-width: 1200px) {
             font-size: 2rem;
@@ -59,8 +58,6 @@ export const Container = styled.main`
     }
 
     span {
-        line-height: 1.5;
-        margin-bottom: 1rem;
         font-size: 1rem;
     }
 
@@ -73,7 +70,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     position: absolute;
-    padding: 0 1rem;
+    margin: 0 1rem;
 
     button {
         display: flex;
@@ -103,7 +100,8 @@ export const Details = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 1rem 2rem;
+    margin: 1.5rem 2rem;
+    gap: 0.5rem;
 
     @media (max-width: 1200px) {
         align-items: center;
@@ -122,7 +120,6 @@ export const PrimaryInfo = styled.div`
         color: ${(props) => props.theme.detail};
         text-align: center;
         align-items: center;
-        margin-bottom: 0;
         font-weight: 500;
 
         @media (max-width: 1200px) {
@@ -140,7 +137,6 @@ export const PrimaryInfo = styled.div`
         font-weight: 500;
         text-transform: capitalize;
         font-size: 1.5rem;
-        margin-bottom: 0rem;
 
         @media (max-width: 1200px) {
             font-size: 1rem;
@@ -174,7 +170,7 @@ export const Sinopse = styled.span`
     font-size: 1rem;
     opacity: 0.7;
     border-radius: 5px;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 
     @media (max-width: 1200px) {
         width: 80%;

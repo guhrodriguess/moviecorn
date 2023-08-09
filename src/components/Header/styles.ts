@@ -15,7 +15,7 @@ export const Header = styled.header`
     @media (max-width: 1200px) {
         width: 100%;
         position: relative;
-        height: 10vh;
+        padding: 2rem 0;
         border-right: none;
         border-bottom: 2px solid ${(props) => props.theme.hr};
     }
@@ -37,7 +37,6 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-height: 700px;
     height: 100%;
     width: 100%;
     padding: 2rem 1rem;
@@ -53,25 +52,20 @@ export const Nav = styled.nav`
 `;
 
 export const MobileIcon = styled.button`
-    display: none;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
     background: transparent;
     border: none;
     color: ${(props) => props.theme.text};
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+    transition: transform 0.2s ease-in-out;
 
     &:active {
         transform: scale(0.8);
     }
 
-    @media (max-width: 1200px) {
-        display: flex;
-        position: sticky;
-        right: 24px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 999;
+    @media (min-width: 1201px) {
+        display: none;
     }
 `;
 
@@ -79,8 +73,10 @@ export const NavMenu = styled.ul<HeaderProps>`
     display: flex;
     flex-direction: column;
     list-style: none;
-    padding: 1rem 0rem;
+    padding: 1.5rem 0rem;
     gap: 1rem;
+    overflow: auto;
+    flex-grow: 1;
 
     hr {
         width: 100%;
@@ -90,6 +86,16 @@ export const NavMenu = styled.ul<HeaderProps>`
     .active {
         background-color: ${(props) => props.theme.primary};
         border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: ${(props) => props.theme.scrollbar};
+        border-radius: 10px;
+        border: 3.5px solid ${(props) => props.theme.background};
     }
 
     @media (max-width: 1200px) {
@@ -102,9 +108,9 @@ export const NavMenu = styled.ul<HeaderProps>`
         left: ${({ showMenu }) => (showMenu ? 0 : "-100%")};
         transition: all 0.5s ease;
         background: ${(props) => props.theme.background};
-        z-index: 1;
+        z-index: -1;
         gap: 0.5rem;
-        top: 10vh;
+        top: 6rem;
         overflow: auto;
     }
 `;

@@ -8,4 +8,5 @@ export const defaultTheme = {
     blackOpacity: "rgba(0, 0, 0, 0.7)",
     button_800: "#080b22",
     button_900: "#060813",
+    scrollbar: "#444",
 };

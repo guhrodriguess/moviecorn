@@ -4,8 +4,7 @@ import { fadeIn } from "../../../styles/global";
 export const Section = styled.main`
     animation: ${fadeIn} 0.3s ease;
     padding: 0 0.5rem 0 20rem;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
 
     @media (max-width: 1500px) {
         padding: 0rem 2rem;
@@ -40,10 +39,10 @@ export const Details = styled.div`
     }
 
     @media (min-width: 1201px) {
-        margin-left: 20rem;
+        margin-left: 19rem;
     }
 
     @media (min-width: 1501px) {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
     }
 `;

@@ -9,7 +9,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 import { fetchTopTv } from "@/api/tv";
 
-import TvCard from "../TvCard";
+import TvCard from "../Card";
 
 import { MapProps } from "@/types";
 
@@ -60,15 +60,13 @@ export default function TvSlider() {
                 }}
                 style={{ width: "100%", height: "max-content" }}
             >
-                {topTv.map((tv: MapProps) => {
-                    return (
-                        <SwiperSlide key={tv.id}>
-                            <Link to={`/tv/top/details/${tv.id}`}>
-                                <TvCard data={tv} />
-                            </Link>
-                        </SwiperSlide>
-                    );
-                })}
+                {topTv.map((tv: MapProps) => (
+                    <SwiperSlide key={tv.id}>
+                        <Link to={`/tv/top/details/${tv.id}`}>
+                            <TvCard data={tv} />
+                        </Link>
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </Styles.Section>
     );
