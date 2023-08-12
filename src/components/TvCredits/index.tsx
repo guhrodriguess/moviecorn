@@ -30,6 +30,7 @@ export default function TvCredits({ id }) {
                             <img
                                 src={`${backdropImage_path}${credit.profile_path}`}
                                 alt={credit.original_name}
+                                loading="lazy"
                             />
                             <h4>{credit.original_name}</h4>
                         </Styled.CreditsCard>

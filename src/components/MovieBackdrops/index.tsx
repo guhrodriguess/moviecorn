@@ -25,7 +25,10 @@ export default function MovieBackdrops({ id }) {
                 {movieBackdrops.length > 0 ? (
                     movieBackdrops.slice(0, 4).map(({ id, file_path }) => (
                         <Styled.BackdropImage key={id}>
-                            <img src={`${backdropImage_path}${file_path}`} />
+                            <img
+                                src={`${backdropImage_path}${file_path}`}
+                                loading="lazy"
+                            />
                         </Styled.BackdropImage>
                     ))
                 ) : (

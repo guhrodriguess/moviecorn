@@ -57,6 +57,7 @@ export default function Home() {
                                     src={`${backdropImage_path}${
                                         movie && movie.backdrop_path
                                     }`}
+                                    loading="lazy"
                                 />
                             </div>
                             <Styles.PosterOverlay>

@@ -39,7 +39,12 @@ export default function Header() {
                     <Styles.MobileIcon onClick={handleMenu}>
                         <AlignLeft size={30} />
                     </Styles.MobileIcon>
-                    <img src={logo} width={150} alt="MovieCorn Logo" />
+                    <img
+                        src={logo}
+                        width={150}
+                        alt="MovieCorn Logo"
+                        loading="lazy"
+                    />
                     <Styles.NavMenu showMenu={showMenu}>
                         <h3>Página inicial</h3>
                         <NavLink

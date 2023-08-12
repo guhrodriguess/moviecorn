@@ -7,11 +7,11 @@ import { fetchTvBackdrops } from "@/api/tv";
 import { backdropImage_path } from "@/utils";
 
 export default function TvBackdrops({ id }) {
-    const [movieBackdrops, setMovieBackdrops] = useState([]);
+    const [tvBackdrops, setTvBackdrops] = useState([]);
 
     useEffect(() => {
         fetchTvBackdrops({ id }).then((response) => {
-            setMovieBackdrops(response);
+            setTvBackdrops(response);
         });
     }, []);
 
@@ -22,10 +22,13 @@ export default function TvBackdrops({ id }) {
                 <hr />
             </Styled.BackdropsContent>
             <Styled.BackdropsList>
-                {movieBackdrops.length > 0 ? (
-                    movieBackdrops.slice(0, 4).map(({ id, file_path }) => (
+                {tvBackdrops.length > 0 ? (
+                    tvBackdrops.slice(0, 4).map(({ id, file_path }) => (
                         <Styled.BackdropImage key={id}>
-                            <img src={`${backdropImage_path}${file_path}`} />
+                            <img
+                                src={`${backdropImage_path}${file_path}`}
+                                loading="lazy"
+                            />
                         </Styled.BackdropImage>
                     ))
                 ) : (
