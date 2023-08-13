@@ -1,16 +1,7 @@
-<div align="center">
+## MovieCorn
 
-![MovieCorn image](./public/readme-image.png)
+Movie and series library.
 
-</div>
-
-<div align="center"><strong>MovieCorn</strong></div>
-<div align="center">Movie and series library <br /> using the TMDb API. <br /> Access <a href="https://moviecorn.vercel.app/">here</a>.</div>
-
-<br />
-
-<div align="center">
-
-[![My Skills](https://skillicons.dev/icons?i=react,typescript,styledcomponents)](https://skillicons.dev)
-
-</div>
+<a href="https://moviecorn.vercel.app/">
+    <img src="./public/readme-image.png" />
+</a>
