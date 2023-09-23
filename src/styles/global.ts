@@ -37,23 +37,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const CardList = styled.ul`
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
 
-    @media (max-width: 366px) {
-        padding-left: 0rem;
-    }
+  @media (max-width: 366px) {
+    padding-left: 0rem;
+  }
 
-    @media (min-width: 1200px) {
-        padding-left: 18.5rem;
-    }
+  @media (min-width: 1200px) {
+    padding-left: 18.5rem;
+  }
 
-    @media (min-width: 1501px) {
-        padding-left: 0;
-    }
+  @media (min-width: 1501px) {
+    padding-left: 0;
+  }
 `;
 
 export const fadeIn = keyframes`

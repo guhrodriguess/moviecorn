@@ -28,57 +28,45 @@ import NotFound from "@/pages/NotFound";
 
 // React Router
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
 } from "react-router-dom";
 
 // Render
 const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
-    <Router>
-        <ThemeProvider theme={defaultTheme}>
-            <GlobalStyle />
-            <Header />
-            <ScrollTop />
-            <Routes>
-                <Route path="/" element={<Home />} />
+  <Router>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <Header />
+      <ScrollTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-                <Route path="/movies/releases" element={<ReleaseMovies />} />
-                <Route path="/movies/popular" element={<PopularMovies />} />
-                <Route path="/movies/top" element={<TopMovies />} />
+        <Route path="/movies/releases" element={<ReleaseMovies />} />
+        <Route path="/movies/popular" element={<PopularMovies />} />
+        <Route path="/movies/top" element={<TopMovies />} />
 
-                <Route path="/tv/releases" element={<ReleaseTv />} />
-                <Route path="/tv/popular" element={<PopularTv />} />
-                <Route path="/tv/top" element={<TopTv />} />
+        <Route path="/tv/releases" element={<ReleaseTv />} />
+        <Route path="/tv/popular" element={<PopularTv />} />
+        <Route path="/tv/top" element={<TopTv />} />
 
-                <Route
-                    path="/movies/releases/details/:id"
-                    element={<MovieDetails />}
-                />
-                <Route
-                    path="/movies/popular/details/:id"
-                    element={<MovieDetails />}
-                />
-                <Route
-                    path="/movies/top/details/:id"
-                    element={<MovieDetails />}
-                />
+        <Route path="/movies/releases/details/:id" element={<MovieDetails />} />
+        <Route path="/movies/popular/details/:id" element={<MovieDetails />} />
+        <Route path="/movies/top/details/:id" element={<MovieDetails />} />
 
-                <Route
-                    path="/tv/releases/details/:id"
-                    element={<TvDetails />}
-                />
-                <Route path="/tv/popular/details/:id" element={<TvDetails />} />
-                <Route path="/tv/top/details/:id" element={<TvDetails />} />
+        <Route path="/tv/releases/details/:id" element={<TvDetails />} />
+        <Route path="/tv/popular/details/:id" element={<TvDetails />} />
+        <Route path="/tv/top/details/:id" element={<TvDetails />} />
 
-                <Route path="/404" element={<NotFound />} />
-                <Route path="*" element={<Navigate to="/404" />} />
-            </Routes>
-        </ThemeProvider>
-    </Router>
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+      </Routes>
+    </ThemeProvider>
+  </Router>
 );
